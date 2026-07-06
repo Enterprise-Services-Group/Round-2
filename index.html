@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experience Design Lead Final Interview Kit</title>
+<style>
+  :root{
+    --paper:#f6f1e7;        /* warm archival paper */
+    --paper-2:#fbf8f1;      /* card surface */
+    --ink:#1f2a37;          /* deep ink navy */
+    --ink-soft:#48566a;     /* secondary text */
+    --rule:#d9cfba;         /* hairline rules */
+    --brass:#9a6b2b;        /* ochre / brass accent */
+    --brass-soft:#efe2c8;
+    --good:#3f6b4c;
+    --shadow:0 1px 0 rgba(31,42,55,.04), 0 8px 24px -16px rgba(31,42,55,.35);
+    --maxw:980px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter","Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:32px 24px 96px}
+
+  /* Masthead */
+  .masthead{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:22px}
+  .eyebrow{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--brass);font-weight:600;margin:0 0 6px
+  }
+  h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:600;font-size:30px;line-height:1.1;margin:0;letter-spacing:-.01em
+  }
+  .sub{color:var(--ink-soft);font-size:14px;margin:8px 0 0}
+  .meta-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;font-size:13px;color:var(--ink-soft)}
+  .meta-row b{color:var(--ink);font-weight:600}
+
+  /* Tabs */
+  .tabs{display:flex;gap:8px;margin:26px 0 0;flex-wrap:wrap}
+  .tab{
+    display:flex;align-items:center;gap:8px;
+    background:var(--paper-2);border:1px solid var(--rule);border-bottom:none;
+    border-radius:10px 10px 0 0;padding:10px 12px;cursor:pointer;
+    box-shadow:var(--shadow);position:relative;top:1px
+  }
+  .tab.active{border-color:var(--ink);border-bottom:2px solid var(--paper-2);background:var(--paper-2)}
+  .tab .pip{
+    width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+    background:var(--brass-soft);color:var(--brass);font-size:12px;font-weight:700;flex:none
+  }
+  .tab.active .pip{background:var(--ink);color:var(--paper-2)}
+  .tab input{
+    border:none;background:transparent;font:inherit;font-weight:600;color:var(--ink);
+    width:150px;padding:2px 4px;border-radius:6px
+  }
+  .tab input::placeholder{color:var(--ink-soft);font-weight:500;font-style:italic}
+  .tab input:focus{outline:none;background:#fff;box-shadow:0 0 0 2px var(--brass-soft)}
+
+  .panel{
+    background:var(--paper-2);border:1px solid var(--ink);border-radius:0 12px 12px 12px;
+    padding:24px;box-shadow:var(--shadow)
+  }
+
+  /* Candidate header inside panel */
+  .cand-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+  .cand-name{font-family:Georgia,serif;font-size:22px;font-weight:600}
+  .cand-name span{color:var(--ink-soft);font-style:italic;font-weight:400}
+  .timing{font-size:12px;color:var(--ink-soft);text-align:right}
+
+  /* Section + question */
+  .section{margin-top:26px}
+  .section-bar{
+    display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule);
+    padding-bottom:8px;margin-bottom:14px
+  }
+  .section-no{font-family:Georgia,serif;font-size:13px;color:var(--brass);font-weight:700;letter-spacing:.04em}
+  .section-title{font-weight:700;font-size:15px;letter-spacing:.01em}
+  .section-time{margin-left:auto;font-size:12px;color:var(--ink-soft)}
+
+  .q{margin:0 0 18px;padding:0 0 18px;border-bottom:1px dashed var(--rule)}
+  .q:last-child{border-bottom:none}
+  .q-text{font-family:Georgia,serif;font-size:17px;line-height:1.45;margin:0 0 8px}
+  .probe{font-size:13px;color:var(--ink-soft);margin:0 0 4px;padding-left:14px;position:relative}
+  .probe:before{content:"›";position:absolute;left:0;color:var(--brass);font-weight:700}
+  .look{
+    font-size:12px;color:var(--good);background:#eef3ee;border:1px solid #d6e2d6;
+    border-radius:8px;padding:7px 10px;margin:8px 0 10px;display:block
+  }
+  .look b{color:var(--good)}
+
+  .notes{
+    width:100%;min-height:64px;resize:vertical;background:#fff;border:1px solid var(--rule);
+    border-radius:8px;padding:10px;font:inherit;font-size:14px;color:var(--ink)
+  }
+  .notes:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 2px var(--brass-soft)}
+
+  .rate{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;color:var(--ink-soft)}
+  .rate .dot{
+    width:26px;height:26px;border-radius:50%;border:1px solid var(--rule);background:#fff;
+    cursor:pointer;font-weight:700;font-size:12px;color:var(--ink-soft);display:grid;place-items:center
+  }
+  .rate .dot.on{background:var(--ink);color:var(--paper-2);border-color:var(--ink)}
+
+  /* Verdict */
+  .verdict{margin-top:30px;border-top:2px solid var(--ink);padding-top:18px}
+  .verdict h3{font-family:Georgia,serif;margin:0 0 12px;font-size:18px}
+  .verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+  .field select,.field input,.field textarea{
+    width:100%;background:#fff;border:1px solid var(--rule);border-radius:8px;padding:9px 10px;font:inherit;font-size:14px;color:var(--ink)
+  }
+  .field textarea{min-height:80px;resize:vertical}
+  .field select:focus,.field input:focus,.field textarea:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 2px var(--brass-soft)}
+
+  /* Toolbar */
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
+  .btn{
+    border:1px solid var(--ink);background:var(--ink);color:var(--paper-2);
+    border-radius:8px;padding:9px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer
+  }
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn:hover{opacity:.92}
+  .saved{font-size:12px;color:var(--ink-soft);align-self:center}
+
+  @media (max-width:640px){
+    .verdict-grid{grid-template-columns:1fr}
+    .tab input{width:110px}
+  }
+
+  /* Print: current candidate only, clean */
+  @media print{
+    body{background:#fff}
+    .wrap{padding:0}
+    .toolbar,.tabs{display:none !important}
+    .panel{border:none;box-shadow:none;border-radius:0;padding:0}
+    .look{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .q{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Final Interview · Round 2</p>
+    <h1>Experience Design Lead</h1>
+    <p class="sub">Cultural Collections Search project · University of Melbourne</p>
+    <div class="meta-row">
+      <span><b>Format</b> Face to face, 60 minutes</span>
+      <span><b>Panel</b> <input id="panel" class="inline" placeholder="add panel names" style="border:none;border-bottom:1px solid var(--rule);background:transparent;font:inherit;color:var(--ink);width:200px"></span>
+      <span><b>Date</b> <input id="idate" class="inline" placeholder="dd/mm/yyyy" style="border:none;border-bottom:1px solid var(--rule);background:transparent;font:inherit;color:var(--ink);width:120px"></span>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs"></nav>
+  <section class="panel" id="panel-content"></section>
+
+  <div class="toolbar">
+    <button class="btn" onclick="window.print()">Print this candidate</button>
+    <button class="btn ghost" id="exportBtn">Export all notes (.txt)</button>
+    <button class="btn ghost" id="clearBtn">Clear this candidate</button>
+    <span class="saved" id="savedNote"></span>
+  </div>
+
+</div>
+
+<script>
+/* ---------- Question set: a natural step up from the 30 min screener ---------- */
+const SECTIONS = [
+  {
+    no:"01", title:"Settle in and frame", time:"5 min", scored:false,
+    questions:[
+      {
+        q:"Since our first chat, what has stayed with you about this role, and what made you want to take it further?",
+        probes:["Listen for genuine motivation versus a generic pitch","Any new questions that have surfaced for them"],
+        look:"Specific, considered interest in cultural collections and discovery, not just a job move."
+      }
+    ]
+  },
+  {
+    no:"02", title:"Design leadership and craft", time:"12 min",
+    questions:[
+      {
+        q:"Tell me about a time you lifted the quality or maturity of design in a team or organisation. What did you actually change?",
+        probes:["Were they hands on, coaching, or setting direction","How did they measure that it improved"],
+        look:"Evidence of raising practice, not just doing the work. Owns both craft and uplift of others."
+      }
+    ]
+  },
+  {
+    no:"03", title:"Strategy and service transformation", time:"10 min",
+    questions:[
+      {
+        q:"Describe a time you had to balance a bold target experience against what the organisation could realistically deliver. How did you handle the gap?",
+        probes:["Sequencing","What they protected and what they let go"],
+        look:"Holds a north star while being pragmatic about delivery and constraints."
+      }
+    ]
+  },
+  {
+    no:"04", title:"Stakeholders in a complex organisation", time:"10 min",
+    questions:[
+      {
+        q:"Walk me through how you would build alignment across collection custodians, curators, technologists and leadership who all want different things from search.",
+        probes:["How they surface and reconcile competing needs","Workshop or engagement approach"],
+        look:"A clear engagement method. Treats conflict as information, brings people to a shared view."
+      },
+      {
+        q:"Tell me about a time a senior stakeholder pushed for something the evidence did not support. What did you do?",
+        probes:["How they used insight to reframe","Outcome and the relationship afterwards"],
+        look:"Challenges with evidence and respect. Influences without burning trust."
+      }
+    ]
+  },
+  {
+    no:"05", title:"Domain: search, discovery and collections", time:"8 min",
+    questions:[
+      {
+        q:"Cultural collections are messy, with uneven metadata, ambiguous queries and many user types from researchers to the public. How would you approach designing search for that reality?",
+        probes:["Handling sparse or inconsistent data in the UX","Designing for different intents and literacies"],
+        look:"Comfort designing for ambiguity and imperfect data. Thinks about findability, not just a search box."
+      }
+    ]
+  },
+  {
+    no:"06", title:"Final UI design and developer handover", time:"8 min",
+    questions:[
+      {
+        q:"Walk me through how you take a design from concept to a finished, handover ready Figma file that a developer can build from with confidence.",
+        probes:["Use of components, variants, auto layout and a design system or tokens","States, edge cases, responsive behaviour and accessibility annotations","How they keep the file as a single source of truth once build starts"],
+        look:"Structured, reusable files. Anticipates states and edge cases. Treats handover as a shared artefact, not a throw over the wall."
+      },
+      {
+        q:"Tell me about a time the build drifted from your design. How did you catch it and what did you change in how you hand over since?",
+        probes:["Design QA against the build","Working relationship and rituals with engineers"],
+        look:"Owns implementation quality, not just the mockup. Has improved their handover practice from real experience."
+      }
+    ]
+  },
+  {
+    no:"07", title:"AI in design and research workflows", time:"6 min",
+    questions:[
+      {
+        q:"Where do you see AI genuinely helping a team like this, in both the search experience itself and in how the design team works, and where would you be cautious?",
+        probes:["Practical use in research or synthesis","Awareness of provenance, bias and trust in a cultural context"],
+        look:"Pragmatic and critical. Sees the upside without ignoring trust, accuracy and cultural sensitivity."
+      }
+    ]
+  },
+  {
+    no:"08", title:"Candidate questions and close", time:"4 min", scored:false,
+    questions:[
+      {
+        q:"What questions do you have for us, about the work, the team, or how we will judge success?",
+        probes:["Quality of their questions often says more than answers"],
+        look:"Thoughtful questions that show they are already thinking about the problem and the team."
+      }
+    ]
+  }
+];
+
+/* ---------- State ---------- */
+const KEY = "edl_final_interview_v1";
+let store = loadStore();
+let active = 0;
+
+function blankCandidate(){ return {name:"", answers:{}, ratings:{}, verdict:{rec:"", strengths:"", risks:""}}; }
+function loadStore(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    if(raw){ const p = JSON.parse(raw); if(p && p.cands) return p; }
+  }catch(e){}
+  return { meta:{panel:"",date:""}, cands:[blankCandidate(),blankCandidate(),blankCandidate()] };
+}
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(store)); flashSaved(); }
+  catch(e){ document.getElementById("savedNote").textContent="Notes kept for this session (download to keep a copy)"; }
+}
+let savedTimer;
+function flashSaved(){
+  const n=document.getElementById("savedNote");
+  n.textContent="Saved";
+  clearTimeout(savedTimer);
+  savedTimer=setTimeout(()=>n.textContent="",1200);
+}
+
+/* ---------- Render ---------- */
+function qid(s,i){ return s.no+"_"+i; }
+
+function renderTabs(){
+  const tabs=document.getElementById("tabs"); tabs.innerHTML="";
+  store.cands.forEach((c,idx)=>{
+    const t=document.createElement("div");
+    t.className="tab"+(idx===active?" active":"");
+    t.onclick=(e)=>{ if(e.target.tagName!=="INPUT"){ active=idx; render(); } };
+    const pip=document.createElement("div"); pip.className="pip"; pip.textContent=String.fromCharCode(65+idx);
+    const inp=document.createElement("input");
+    inp.placeholder="Candidate "+String.fromCharCode(65+idx)+" name";
+    inp.value=c.name;
+    inp.oninput=()=>{ c.name=inp.value; save(); renderHeadName(); };
+    inp.onclick=()=>{ active=idx; renderTabs(); };
+    t.appendChild(pip); t.appendChild(inp);
+    tabs.appendChild(t);
+  });
+}
+
+function renderHeadName(){
+  const el=document.getElementById("candName");
+  if(!el) return;
+  const c=store.cands[active];
+  el.innerHTML = c.name ? c.name : "Candidate "+String.fromCharCode(65+active)+" <span>(add name in the tab)</span>";
+}
+
+function render(){
+  renderTabs();
+  const c=store.cands[active];
+  const root=document.getElementById("panel-content");
+  root.innerHTML="";
+
+  const head=document.createElement("div");
+  head.className="cand-head";
+  head.innerHTML='<div class="cand-name" id="candName"></div>'+
+    '<div class="timing">Aim for ~60 min · times are guides, follow the conversation</div>';
+  root.appendChild(head);
+  renderHeadName();
+
+  SECTIONS.forEach(sec=>{
+    const s=document.createElement("div"); s.className="section";
+    const bar=document.createElement("div"); bar.className="section-bar";
+    bar.innerHTML='<span class="section-no">'+sec.no+'</span>'+
+                  '<span class="section-title">'+sec.title+'</span>'+
+                  '<span class="section-time">'+sec.time+'</span>';
+    s.appendChild(bar);
+
+    sec.questions.forEach((item,i)=>{
+      const id=qid(sec,i);
+      const q=document.createElement("div"); q.className="q";
+      let html='<p class="q-text">'+item.q+'</p>';
+      (item.probes||[]).forEach(p=>{ html+='<p class="probe">'+p+'</p>'; });
+      if(item.look){ html+='<span class="look"><b>What good looks like:</b> '+item.look+'</span>'; }
+      q.innerHTML=html;
+
+      const ta=document.createElement("textarea");
+      ta.className="notes"; ta.placeholder="Notes...";
+      ta.value=c.answers[id]||"";
+      ta.oninput=()=>{ c.answers[id]=ta.value; save(); };
+      q.appendChild(ta);
+
+      if(sec.scored!==false){
+        const rate=document.createElement("div"); rate.className="rate";
+        const lbl=document.createElement("span"); lbl.textContent="Rating"; rate.appendChild(lbl);
+        for(let r=1;r<=5;r++){
+          const d=document.createElement("div"); d.className="dot"+(c.ratings[id]===r?" on":"");
+          d.textContent=r;
+          d.onclick=()=>{ c.ratings[id]=(c.ratings[id]===r?0:r); save(); render(); };
+          rate.appendChild(d);
+        }
+        q.appendChild(rate);
+      }
+      s.appendChild(q);
+    });
+    root.appendChild(s);
+  });
+
+  /* Verdict */
+  const v=document.createElement("div"); v.className="verdict";
+  v.innerHTML='<h3>Overall verdict</h3>';
+  const grid=document.createElement("div"); grid.className="verdict-grid";
+
+  const recWrap=document.createElement("div"); recWrap.className="field";
+  recWrap.innerHTML='<label>Recommendation</label>';
+  const sel=document.createElement("select");
+  ["","Strong yes","Yes","Maybe / discuss","No"].forEach(o=>{
+    const op=document.createElement("option"); op.value=o; op.textContent=o||"Select..."; sel.appendChild(op);
+  });
+  sel.value=c.verdict.rec||"";
+  sel.onchange=()=>{ c.verdict.rec=sel.value; save(); };
+  recWrap.appendChild(sel);
+
+  const scoreWrap=document.createElement("div"); scoreWrap.className="field";
+  scoreWrap.innerHTML='<label>Average rating</label>';
+  const score=document.createElement("input"); score.readOnly=true; score.value=avgScore(c); scoreWrap.appendChild(score);
+
+  const strWrap=document.createElement("div"); strWrap.className="field"; strWrap.style.gridColumn="1 / -1";
+  strWrap.innerHTML='<label>Key strengths</label>';
+  const str=document.createElement("textarea"); str.value=c.verdict.strengths||"";
+  str.oninput=()=>{ c.verdict.strengths=str.value; save(); }; strWrap.appendChild(str);
+
+  const riskWrap=document.createElement("div"); riskWrap.className="field"; riskWrap.style.gridColumn="1 / -1";
+  riskWrap.innerHTML='<label>Risks or gaps to probe / reference check</label>';
+  const risk=document.createElement("textarea"); risk.value=c.verdict.risks||"";
+  risk.oninput=()=>{ c.verdict.risks=risk.value; save(); }; riskWrap.appendChild(risk);
+
+  grid.appendChild(recWrap); grid.appendChild(scoreWrap); grid.appendChild(strWrap); grid.appendChild(riskWrap);
+  v.appendChild(grid);
+  root.appendChild(v);
+}
+
+function avgScore(c){
+  const vals=Object.values(c.ratings).filter(n=>n>0);
+  if(!vals.length) return "Not yet rated";
+  return (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1)+" / 5  ("+vals.length+" rated)";
+}
+
+/* ---------- Meta fields ---------- */
+const panelEl=document.getElementById("panel");
+const dateEl=document.getElementById("idate");
+panelEl.value=store.meta.panel||""; dateEl.value=store.meta.date||"";
+panelEl.oninput=()=>{ store.meta.panel=panelEl.value; save(); };
+dateEl.oninput=()=>{ store.meta.date=dateEl.value; save(); };
+
+/* ---------- Buttons ---------- */
+document.getElementById("clearBtn").onclick=()=>{
+  const c=store.cands[active];
+  if(confirm("Clear all notes and ratings for "+(c.name||"this candidate")+"?")){
+    store.cands[active]=blankCandidate(); save(); render();
+  }
+};
+document.getElementById("exportBtn").onclick=()=>{
+  let out="EXPERIENCE DESIGN LEAD FINAL INTERVIEW NOTES\n";
+  out+="Cultural Collections Search project, University of Melbourne\n";
+  out+="Panel: "+(store.meta.panel||"")+"   Date: "+(store.meta.date||"")+"\n";
+  store.cands.forEach((c,idx)=>{
+    out+="\n========================================\n";
+    out+="CANDIDATE "+String.fromCharCode(65+idx)+": "+(c.name||"(unnamed)")+"\n";
+    out+="Recommendation: "+(c.verdict.rec||"Not set")+"   Average: "+avgScore(c)+"\n";
+    out+="========================================\n";
+    SECTIONS.forEach(sec=>{
+      out+="\n["+sec.no+"] "+sec.title+"\n";
+      sec.questions.forEach((item,i)=>{
+        const id=qid(sec,i);
+        out+="\nQ: "+item.q+"\n";
+        if(sec.scored!==false) out+="Rating: "+(c.ratings[id]||"Not rated")+"/5\n";
+        out+="Notes: "+(c.answers[id]||"")+"\n";
+      });
+    });
+    out+="\nStrengths: "+(c.verdict.strengths||"")+"\n";
+    out+="Risks/gaps: "+(c.verdict.risks||"")+"\n";
+  });
+  const blob=new Blob([out],{type:"text/plain"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="edl-final-interview-notes.txt";
+  a.click();
+};
+
+render();
+</script>
+</body>
+</html>
